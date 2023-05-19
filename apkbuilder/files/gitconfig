@@ -1,0 +1,21 @@
+[user]
+        name = builder
+        email = builder@famillegratton.net
+[color]
+        ui = auto
+[filter "lfs"]
+        clean = git-lfs clean %f
+        smudge = git-lfs smudge %f
+        required = true
+[credential]
+        helper = cache --timeout=7200
+[push]
+        default = simple
+
+
+[alias]
+        tree = log --oneline --decorate --graph --all
+        stree = log --oneline --decorate --graph
+[pull]
+        rebase = false
+

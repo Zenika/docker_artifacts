@@ -1,0 +1,4 @@
+export PS1='[\t|\u@\h:\w] '
+export PATH=/bin:/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/builder/bin:/opt/go/bin
+export EDITOR=vi
+export GOROOT=/opt/go
