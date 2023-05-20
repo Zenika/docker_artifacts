@@ -1,0 +1,17 @@
+tag         date            comment
+---         ----            -------
+3.17.00     2023.03.10      Fixed .ssh/config file perms, moved to debian-stable, shrunk image
+3.16.00     2023.01.27      Bumped version in order to have a fully updated image with apt-get
+3.15.00     2022.12.06      Added upload script to Nexus, updated personal SSH key
+3.12.00     2022.10.06      ssh/config fix
+3.11.00     2022.10.06      Fixed volumes regressiob
+3.10.00     2022.09.05      Refreshed build tools
+3.01.00     2022.09.04      Removed volumes
+3.00.00     2022.07.15      Slimmed image by removing Java
+2.00.00     2022.05.23      Version bump, removed sshd, arm64 support
+1.06.01     2022.05.04      Changed rootCA name
+1.06.00     2022.01.25      Added the vim package (!?!)
+1.05.00     2022.01.22      Added jenkins' key, more tools
+1.01        2021.12.07      Changed builder's ssh key
+1           2021.12.06      Added build depencies and the build tools
+0           2021.12.06      First working build
