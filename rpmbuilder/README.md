@@ -1,7 +1,6 @@
-<H1>DEBBUILDER</H1>
-<br>
+<H1>RPMBUILDER</H1>
 
-This container is used to create DEB packages for Debian and Ubuntu distros.
+This container is used to create RPM packages for RedHat-derived distros.
 
 <H2>To configure</H2>
 <H3>Files in this directory</H3>
@@ -25,11 +24,17 @@ Refer to the script to get an idea...
 
 
 
-<H2>Building a DEB package</H2>
+<H2>Building an RPM package</H2>
 <br><br>
  
  - All source code should reside in the project directory. By default, this directory is /projets, but this is tunable within the Dockerfile (see the ARG "projectdir".
 
- - The actual build of a DEB package goes beyond the scope of this document. All of my software follow the same directory structure and allows for easy packaging. See https://github.com/jeanfrancoisgratton/dtools : the software is incomplete, but can be packaged on every major distro.
+ - The actual build of an RPM package goes beyond the scope of this document. All of my software follow the same directory structure and allows for easy packaging. See https://github.com/jeanfrancoisgratton/dtools : the software is incomplete, but can be packaged on every major distro.
+
+ - The build system is based on tito and follows the usual workflow:
+    - tito init
+    - tito tag [--keep-version]
+    - git push --follow-tags origin
+    - tito build --rpm
 
  

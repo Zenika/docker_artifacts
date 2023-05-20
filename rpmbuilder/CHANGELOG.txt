@@ -1,0 +1,42 @@
+tag         date            comment
+---         ----            -------
+Z11.00.00   2023.05.20      Zenika "anonymised" version
+10.02.01    2023.04.03      Fixed permission issue in ~builder/.bashrc and ~builder/.ssh/*
+10.01.00    2023.03.11      Added DNF, which Rocky minimal does not install
+10.00.00    2022.11.28      Moved back to RockyLinux 9 minimal
+9.03.00     2022.10.06      ssh/config fix
+9.02.00     2022.10.06      Fixed volumes regression
+9.01.00     2022.09.17      Moved to Fedora 36 and removed useless commands
+9.00.00     2022.09.05      Moved from RockyLinux-based image to Fedora(35) and tito v0.6.21
+8.04.00     2022.09.04      Removed unused volumes
+8.03.21     2022.09.02      .bahrc update
+8.03.20     2022.09.02      Enabled rocky-devel repo
+8.03.10     2022.09.01      Buildtools scripts
+8.03.00     2022.09.01      Enabled the -devel repo
+8.02.04     2022.07.19      Misc fixes
+[...]
+8.00.00     2022.07.19      Removed sshd+supervisor, tito is now installed via pip3
+7.60.00     2022.07.17      Changed base image to rocky 9-minimal
+7.50.00     2022.07.15      Considerably slimmed down the image; more to come
+7.03.00     2022.05.10      Added tmux
+7.02.02     2022.05.04      Changed rootCA filename
+7.02.01     2022.01.24      Added manpages
+7.02.00     2022.01.22      Exposed extra volume for Jenkins agent, fix directory perms
+7.01.00     2022.01.21      sshd_config fix for Jenkins
+7.00.00     2022.01.21      Added Jenkins agent, moved image to RockyLinux (latest)
+6.05.01     2022.01.04      Permission + ownership issue on helper scripts
+6.05.00     2022.01.04      New helper scripts
+6.03.00     2022.01.03      Fixed TZ issued
+6.02.00     2021.12.29      Fixed some ownership issues
+6.01        2021.12.07      Changed builder's SSH keys
+6           2021.12.06      Better rootCA handling, trimming of image
+5.2         2021.10.04      Added GCC in the image
+5.1         2021.10.04      Updated authorized_keys
+5           2021.06.06      New root CA cert
+4.1         2021.05.28      Fixed password issue for account 'builder'
+4           2021.05.23      Added the build script that will get called from Jenkins
+3.01        2021.05.23      Added forgotten VOLUMEs
+3           2021.05.23      Finalized image
+2           2021.05.23      Completed fully dockerized image, moved image to Oracle Linux 8
+1           2021.05.10      Fixed TZ issue for non-root accounts in Alpine-based images
+0           2021.05.01      Initial image

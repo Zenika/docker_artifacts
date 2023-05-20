@@ -1,0 +1,9 @@
+export PS1='[\t|\u@\h:\w] '
+export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/builder/bin:/opt/bin:/opt/go/bin
+export EDITOR=vim
+export GOROOT=/opt/go
+export GOBIN=$HOME/bin
+export GITHUB_TOKEN=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
+
+alias vi='vim'
+alias gpfto='git push --follow-tags origin'
