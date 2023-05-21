@@ -12,7 +12,7 @@
 
 # USAGE:
 # build.sh CONTAINER(directory) TAG buildargs... (no limit)
-if [ $# -lt 3 ]; then
+if [ $# -lt 2 ]; then
     echo "Error: Two mandatory arguments are required."
     echo "Usage: ./build.sh DOCKER_IMAGE_NAME TAG [--build-arg=value ...]"
     exit 1
