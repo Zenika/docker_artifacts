@@ -1,27 +1,46 @@
 #!/usr/bin/env bash
 
-cd $1
 
-if [ $# -gt 2 ]; then
-    DOCKER_BUILDKIT=1 docker build --force-rm --compress -t $1 --build-arg $3 --build-arg $4 --build-arg $5 --build-arg $6 --build-arg $7 .
-    #DOCKER_BUILDKIT=1 dtools build --force-rm --compress -t $1 --build-arg $3 --build-arg $4 --build-arg $5 --build-arg $6 --build-arg $7 .
-else
-    DOCKER_BUILDKIT=1 docker build --force-rm --compress -t $1 .
-    #DOCKER_BUILDKIT=1 dtools build --force-rm --compress -t $1 .
+#####
+# PLEASE NOTE
+# THIS SCRIPT WILL BE USED IN THIS FORM
+# UNTIL I'VE COMPLETED THE `build` SUBCOMMAND OF `dtools`
+#
+# ...STAY TUNED, `dtools build` IS EXPECTED IN BRANCH 0.850 OF `dtools`
+####
+
+
+# USAGE:
+# build.sh CONTAINER(directory) TAG buildargs... (no limit)
+if [ $# -lt 3 ]; then
+    echo "Error: Two mandatory arguments are required."
+    echo "Usage: ./build.sh DOCKER_IMAGE_NAME TAG [--build-arg=value ...]"
+    exit 1
 fi
 
-docker tag $1 $1:$2
-#docker rmi $1
-#dtools rmi $1
+imgname=$1
+imgtag=$2
+shift 2
+build_args=()
+
+# See if we have --build-args
+for arg in "$@"; do
+    build_args+=("--build-arg" "$arg")
+done
+
+cd $imgname
+DOCKER_BUILDKIT=1 docker build --force-rm --compress -t ${imgname} ${build_args[*]} .
+
+
+docker tag $imgname $imgname:$imgtag
+dtools rmi $imgname
 
 cd ..
 echo
 echo "Available images:"
 echo "================="
-docker images
-#dtools lsi
+dtools lsi
 echo
 echo "Existing containers:"
 echo "===================="
-docker ps -a
-#dtools ls
+dtools ls
