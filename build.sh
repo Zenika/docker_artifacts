@@ -29,12 +29,11 @@ for arg in "$@"; do
 done
 
 cd $imgname
-DOCKER_BUILDKIT=1 docker build --force-rm --compress -t ${imgname} ${build_args[*]} .
+DOCKER_BUILDKIT=1 docker build --force-rm --compress -t ${imgname}:${imgtag} ${build_args[*]} .
 
 
-docker tag $imgname $imgname:$imgtag
-#dtools rmi $imgname
-docker rmi $imgname
+#docker tag $imgname nexus:9820/$imgname:$imgtag
+docker tag $imgname:$imgtag nexus:9820/$imgname
 
 cd ..
 echo
