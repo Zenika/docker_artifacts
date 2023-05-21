@@ -33,14 +33,17 @@ DOCKER_BUILDKIT=1 docker build --force-rm --compress -t ${imgname} ${build_args[
 
 
 docker tag $imgname $imgname:$imgtag
-dtools rmi $imgname
+#dtools rmi $imgname
+docker rmi $imgname
 
 cd ..
 echo
 echo "Available images:"
 echo "================="
-dtools lsi
+#dtools lsi
+docker images
 echo
 echo "Existing containers:"
 echo "===================="
-dtools ls
+#dtools ls
+docker ps -a
