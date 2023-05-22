@@ -30,9 +30,6 @@ done
 
 cd $imgname
 DOCKER_BUILDKIT=1 docker build --force-rm --compress -t ${imgname}:${imgtag} ${build_args[*]} .
-
-
-#docker tag $imgname nexus:9820/$imgname:$imgtag
 docker tag $imgname:$imgtag $imgname
 
 cd ..
