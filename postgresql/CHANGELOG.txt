@@ -1,0 +1,6 @@
+tag         date            comment
+---         ----            -------
+Z2.00.00    2023.05.22      Zenika (anonymised) version
+1.10.01     2023.02.23      Upgrade to PGSQL to 15.2, libcrypto3 update
+1.10.00     2023.01.17      Upgrade to PGSQL 15
+1.00.00     2022.08.21      Initial image
