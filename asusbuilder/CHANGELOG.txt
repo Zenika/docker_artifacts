@@ -1,0 +1,4 @@
+tag         date            comment
+---         ----            -------
+1.01.00     2023.06.15      Anomyzed the build process
+1.00.00     2023.05.16      First working build
