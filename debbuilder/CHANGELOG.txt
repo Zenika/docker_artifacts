@@ -1,5 +1,6 @@
 tag         date            comment
 ---         ----            -------
+Z4.01.00    2023.06.15      Fixed push2repo script
 Z4.00.00    2023.05.20      Zenika "anonymised" version
 3.17.00     2023.03.10      Fixed .ssh/config file perms, moved to debian-stable, shrunk image
 3.16.00     2023.01.27      Bumped version in order to have a fully updated image with apt-get

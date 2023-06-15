@@ -1,5 +1,6 @@
 tag         date            comment
 ---         ----            -------
+Z11.01.00   2023.06.15      Fixed push2repo script
 Z11.00.00   2023.05.20      Zenika "anonymised" version
 10.02.01    2023.04.03      Fixed permission issue in ~builder/.bashrc and ~builder/.ssh/*
 10.01.00    2023.03.11      Added DNF, which Rocky minimal does not install

@@ -6,8 +6,8 @@ ARG certname=rootCAfamillegratton.crt
 ARG artifacturl=https://nginx:9443/artifacts
 ARG projectdir=/projets
 LABEL maintainer="jean-francois@famillegratton.net"
-LABEL build-date="20230520"
-LABEL dockerfile-version="Z11.00.00"
+LABEL build-date="20230615"
+LABEL dockerfile-version="Z11.01.00"
 LABEL original-binary-version="0.6.21"
 LABEL dockerized-software="tito"
 LABEL container-use="RPM package builder"
@@ -19,6 +19,7 @@ COPY files/ssh/* /.ssh/
 COPY files/gitconfig /
 COPY files/buildtools/* /opt/bin/
 COPY files/bashrc /home/builder/.bashrc
+COPY files/push2repo.sh /home/builder/bin/
 
 RUN mkdir -p ${projectdir} /tmp/tito && \
 microdnf update -y && microdnf install -y wget vim python3-pip which dnf openssh-clients rpmdevtools git tar bzip2 bind-utils sudo ca-certificates && \
@@ -32,10 +33,10 @@ wget -q --no-check-certificate ${artifacturl}/dumb-init_1.2.5_$arch -O //usr/bin
 wget -q --no-check-certificate ${certurl}/${certname} -O /etc/pki/ca-trust/source/anchors/${certname} && \
 update-ca-trust && chmod 755 /usr/bin/dumb-init && \
 rm -f /etc/localtime && ln -s -f /usr/share/zoneinfo/America/Montreal /etc/localtime && \
-chmod 755 /opt/bin/* && chown 0:devops /opt/bin/* && microdnf clean all && \
+chmod 755 /opt/bin/* /home/builder/bin/* && chown 0:devops /opt/bin/* && microdnf clean all && \
 echo "Look into /opt/bin for helper scripts to install some languages" > /etc/motd && \
 sed -i -e 's/enabled=0/enabled=1/g' /etc/yum.repos.d/rocky-devel.repo && \
-echo "tito: 0.6.21" >> /.DOCKERVERSION && echo "DOCKERFILE: Z11.00.00" >> /.DOCKERVERSION && \
+echo "tito: 0.6.21" >> /.DOCKERVERSION && echo "DOCKERFILE: 11.00.01" >> /.DOCKERVERSION && \
 echo "OS: rockylinux9 minimal" >> /.DOCKERVERSION && echo "Arch: ${arch}" >> /.DOCKERVERSION
 
 
