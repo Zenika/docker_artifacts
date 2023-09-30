@@ -1,0 +1,16 @@
+bare_alpine/
+bare_debian/
+bare_photon/
+bare_rocky/
+bookreader/
+dhcpd/
+dns/
+dockerbuilder/
+gitea/
+haproxy/
+jenkins/
+nginx/
+tc-agent/
+teamcity/
+volbackup/
+
